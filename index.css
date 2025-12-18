@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: #121314;
+  color: #e2e3e5;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1f21;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4d4f54;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #62646b;
+}
+
+/* Focus styles */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #ed7619;
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: #ed7619;
+  color: white;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .glass {
+    background: rgba(30, 31, 33, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-light {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #ed7619 0%, #f19340 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(#1e1f21, #1e1f21) padding-box,
+                linear-gradient(135deg, #ed7619 0%, #de5c10 100%) border-box;
+    border: 1px solid transparent;
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 40px rgba(237, 118, 25, 0.15);
+  }
+  
+  .shadow-glow-sm {
+    box-shadow: 0 0 20px rgba(237, 118, 25, 0.1);
+  }
+}
+
+/* Animation delays for staggered reveals */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* Input styles */
+input, select, textarea {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #ed7619;
+  box-shadow: 0 0 0 3px rgba(237, 118, 25, 0.15);
+}
+
+/* Button transitions */
+button {
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Table styles */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
